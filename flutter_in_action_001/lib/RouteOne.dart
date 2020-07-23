@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_in_action_001/RouteTwo.dart';
+
+import 'RouteTwo.dart';
 
 class RouteOne extends StatefulWidget {
   RouteOne({Key key}) : super(key: key);
@@ -33,12 +34,15 @@ class RouteOneState extends State<RouteOne> {
                 child: Text('Open route two'),
                 textColor: Colors.blueAccent,
                 onPressed: () async {
-                  // 打开TipRoute并等待返回结果
-                  var result =
-                      await Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) =>
-                        new RouteTwo(text: '来自Route One传递参数值'),
-                  ));
+                  // 打开RouteTwo并等待返回结果
+                  // var result =
+                  //     await Navigator.of(context).push(MaterialPageRoute(
+                  //   builder: (context) =>
+                  //       new RouteTwo(text: '来自Route One传递参数值'),
+                  // ));
+
+                  var result = await Navigator.pushNamed(context, 'two',
+                      arguments: '来自Route One传递参数');
                   setState(() {
                     this.params = result;
                   });

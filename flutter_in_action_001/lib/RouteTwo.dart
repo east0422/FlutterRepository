@@ -6,6 +6,7 @@ class RouteTwo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // var args = ModalRoute.of(context).settings.arguments;
     return Scaffold(
       appBar: AppBar(
         leading: BackButton( // 重写顶部返回按钮响应事件
