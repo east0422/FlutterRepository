@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class RouteTwo extends StatelessWidget {
-  RouteTwo({Key key, @required this.text}) : super(key: key);
   final String text; // text为其他路由传递过来的参数，显示在页面上
+  RouteTwo({this.text});
 
   @override
   Widget build(BuildContext context) {

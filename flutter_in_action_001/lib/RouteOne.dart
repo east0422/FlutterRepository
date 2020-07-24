@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import 'RouteTwo.dart';
+import 'package:flutter_in_action_001/RouteTwo.dart';
+import 'package:flutter_in_action_001/Routes.dart' show routeTwo;
 
 class RouteOne extends StatefulWidget {
   RouteOne({Key key}) : super(key: key);
@@ -41,7 +40,7 @@ class RouteOneState extends State<RouteOne> {
                   //       new RouteTwo(text: '来自Route One传递参数值'),
                   // ));
 
-                  var result = await Navigator.pushNamed(context, 'two',
+                  var result = await Navigator.pushNamed(context, routeTwo,
                       arguments: '来自Route One传递参数');
                   setState(() {
                     this.params = result;
