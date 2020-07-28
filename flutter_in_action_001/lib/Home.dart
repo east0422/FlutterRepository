@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_in_action_001/RandomWordsWidget.dart';
 import 'package:flutter_in_action_001/Routes.dart' show routeOne;
 
 class Home extends StatefulWidget {
@@ -35,6 +36,7 @@ class HomeState extends State<Home> {
               '$counter',
               style: Theme.of(context).textTheme.headline4,
             ),
+            RandomWordsWidget(), // 随机字符串
             FlatButton(
               child: Text("Open route one"),
               textColor: Colors.blueGrey,

@@ -15,6 +15,7 @@ final Map<String, WidgetBuilder> routes = {
   routeTwo: (context, {arguments}) => RouteTwo(text: (ModalRoute.of(context).settings.arguments) ?? arguments), // 使用onGenerateRoute以路径名称跳转到routeTwo时{arguments}有值而settings.arguments为null
 };
 
+// 调用Navigator.pushNamed(...)打开命名路由时，如果指定的路由名在路由表中已注册，则会调用路由表中的builder函数来生成路由组件；如果路由表中没有注册，才会调用onGenerateRoute来生成路由
 // ignore: top_level_function_literal_block
 final onGenerateRoute = (RouteSettings settings) {
   final String routeName = settings.name;
