@@ -29,6 +29,10 @@ class HomeState extends State<Home> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Padding(
+              padding: EdgeInsets.fromLTRB(5, 30, 5, 50),
+              child: Image.asset('assets/images/001.jpg'),
+            ),
             Text(
               'You have pushed the button this many times:',
             ),
