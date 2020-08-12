@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_in_action_001/Routes.dart' show contextRoute, tapBoxA, tapBoxB, tapBoxC;
+import 'package:flutter_in_action_001/Routes.dart' show imageFit, contextRoute, tapBoxA, tapBoxB, tapBoxC;
 
 class BasicWidgets extends StatelessWidget {
   @override
@@ -12,6 +12,12 @@ class BasicWidgets extends StatelessWidget {
         child: Column(
           children: <Widget>[
             Padding(padding: EdgeInsets.all(20)),
+            IconButton(
+              icon: Icon(Icons.thumb_up),
+              onPressed: () {
+                Navigator.pushNamed(context, imageFit);
+              },
+            ),
             FlatButton(
               child: Text('ContextRoute'),
               color: Colors.blue,
@@ -21,26 +27,20 @@ class BasicWidgets extends StatelessWidget {
                 Navigator.pushNamed(context, contextRoute);
               },
             ),
-            FlatButton(
+            RaisedButton(
               child: Text('TapBoxA'),
-              color: Colors.blue,
-              textColor: Colors.white,
               onPressed: () {
                 Navigator.pushNamed(context, tapBoxA);
               },
             ),
             FlatButton(
               child: Text('TapBoxB'),
-              color: Colors.blue,
-              textColor: Colors.white,
               onPressed: () {
                 Navigator.pushNamed(context, tapBoxB);
               },
             ),
-            FlatButton(
+            OutlineButton(
               child: Text('TapBoxC'),
-              color: Colors.blue,
-              textColor: Colors.white,
               onPressed: () {
                 Navigator.pushNamed(context, tapBoxC);
               },

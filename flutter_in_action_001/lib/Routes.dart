@@ -4,6 +4,7 @@ import 'package:flutter_in_action_001/basicWidgets/ContextRoute.dart';
 import 'package:flutter_in_action_001/Home.dart';
 import 'package:flutter_in_action_001/RouteOne.dart';
 import 'package:flutter_in_action_001/RouteTwo.dart';
+import 'package:flutter_in_action_001/basicWidgets/ImageFit.dart';
 import 'package:flutter_in_action_001/basicWidgets/TapBoxA.dart';
 import 'package:flutter_in_action_001/basicWidgets/TapBoxB.dart';
 import 'package:flutter_in_action_001/basicWidgets/TapBoxC.dart';
@@ -18,6 +19,7 @@ final String contextRoute = '/basicWidgets/contextRoute';
 final String tapBoxA = '/basicWidgets/tapBoxA';
 final String tapBoxB = '/basicWidgets/tapBoxB';
 final String tapBoxC = '/basicWidgets/tapBoxC';
+final String imageFit = '/basicWidgets/imageFit';
 
 // 路由表
 final Map<String, WidgetBuilder> routes = {
@@ -29,7 +31,8 @@ final Map<String, WidgetBuilder> routes = {
   contextRoute: (context) => ContextRoute(),
   tapBoxA: (context) => TapBoxA(),
   tapBoxB: (context) => TapBoxBParent(), // 父类管理状态
-  tapBoxC: (context) => TapBoxCParent(),
+  tapBoxC: (context) => TapBoxCParent(), // 混合管理状态
+  imageFit: (context) => ImageFit(),
 };
 
 // 调用Navigator.pushNamed(...)打开命名路由时，如果指定的路由名在路由表中已注册，则会调用路由表中的builder函数来生成路由组件；如果路由表中没有注册，才会调用onGenerateRoute来生成路由
