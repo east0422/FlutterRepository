@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_in_action_001/RandomWordsWidget.dart';
-import 'package:flutter_in_action_001/Routes.dart' show routeOne, basicWidgets;
+import 'package:flutter_in_action_001/Routes.dart' show routeOne, basicWidgets, layoutWidgets;
 
 class Home extends StatefulWidget {
   Home({Key key, this.title, this.initCounter: 0}) : super(key: key);
@@ -71,6 +71,12 @@ class HomeState extends State<Home> {
               color: Colors.blue,
               textColor: Colors.white,
               onPressed: () => Navigator.pushNamed(context, basicWidgets)
+            ),
+            MaterialButton(
+              child: Text('布局类组件'),
+              color: Colors.blue,
+              textColor: Colors.white,
+              onPressed: () => Navigator.pushNamed(context, layoutWidgets)
             ),
           ],
         ),
