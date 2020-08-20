@@ -16,69 +16,77 @@ class TapBoxB extends StatelessWidget {
       appBar: AppBar(
         title: Text('TapBoxB'),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          GestureDetector(
-            onTap: handleTap,
-            child: Center(
-              child: Container(
-                width: 200,
-                height: 200,
-                alignment: Alignment.center,
-                color: active ? Colors.lightGreen[700] : Colors.grey[600],
-                child: Text(
-                  active ? 'B-Active' : 'B-InActive',
-                  style: TextStyle(fontSize: 32, color: Colors.white),
-                ),
-              ),
-            ),
+      body: SingleChildScrollView( // 解决输入框弹出键盘时bottom overflowed警告
+        child: ConstrainedBox(
+          constraints: BoxConstraints(
+            minWidth: double.infinity, // 宽度尽可能大
+            minHeight: MediaQuery.of(context).size.height, // 屏幕高度
           ),
-          Padding(
-            padding: EdgeInsets.symmetric(vertical: 0, horizontal: 30),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                TextField(
-                  autofocus: true,
-                  decoration: InputDecoration(
-                    labelText: '用户名',
-                    hintText: '用户名或邮箱',
-                    prefixIcon: Icon(Icons.person)
-                  ),
-                ),
-                TextField(
-                  decoration: InputDecoration(
-                    labelText: '密码',
-                    hintText: '您的登录密码',
-                    prefixIcon: Icon(Icons.lock)
-                  ),
-                  obscureText: true,
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 20, horizontal: 0),
-                  child: SizedBox(
-                    height: 10,
-                    child: LinearProgressIndicator(
-                      backgroundColor: Colors.red[200],
-                      valueColor: AlwaysStoppedAnimation(Colors.green),
-                      // value: .5, // 为null时则指示器会执行一个循环动画(模糊进度)
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              GestureDetector(
+                onTap: handleTap,
+                child: Center(
+                  child: Container(
+                    width: 200,
+                    height: 200,
+                    alignment: Alignment.center,
+                    color: active ? Colors.lightGreen[700] : Colors.grey[600],
+                    child: Text(
+                      active ? 'B-Active' : 'B-InActive',
+                      style: TextStyle(fontSize: 32, color: Colors.white),
                     ),
                   ),
                 ),
-                SizedBox(
-                  height: 30,
-                  width: 30,
-                  child: CircularProgressIndicator(
-                    backgroundColor: Colors.grey[200],
-                    valueColor: AlwaysStoppedAnimation(Colors.blue),
-                    // value: 0.7, // 为null时则指示器会执行一个循环动画(模糊进度)
-                  ),
-                ),
-              ]
-            )
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 0, horizontal: 30),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    TextField(
+                      autofocus: false,
+                      decoration: InputDecoration(
+                        labelText: '用户名',
+                        hintText: '用户名或邮箱',
+                        prefixIcon: Icon(Icons.person)
+                      ),
+                    ),
+                    TextField(
+                      decoration: InputDecoration(
+                        labelText: '密码',
+                        hintText: '您的登录密码',
+                        prefixIcon: Icon(Icons.lock)
+                      ),
+                      obscureText: true,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 20, horizontal: 0),
+                      child: SizedBox(
+                        height: 10,
+                        child: LinearProgressIndicator(
+                          backgroundColor: Colors.red[200],
+                          valueColor: AlwaysStoppedAnimation(Colors.green),
+                          // value: .5, // 为null时则指示器会执行一个循环动画(模糊进度)
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 30,
+                      width: 30,
+                      child: CircularProgressIndicator(
+                        backgroundColor: Colors.grey[200],
+                        valueColor: AlwaysStoppedAnimation(Colors.blue),
+                        // value: 0.7, // 为null时则指示器会执行一个循环动画(模糊进度)
+                      ),
+                    ),
+                  ]
+                )
+              ),
+            ],
           ),
-        ],
+        ),
       )
     );
   }

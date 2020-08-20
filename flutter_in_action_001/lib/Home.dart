@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_in_action_001/RandomWordsWidget.dart';
-import 'package:flutter_in_action_001/Routes.dart' show routeOne, basicWidgets, layoutWidgets;
+import 'package:flutter_in_action_001/Routes.dart' show routeOne, basicWidgets, layoutWidgets, containerWidgets, scrollableWidgets, functionalWidgets;
 
 class Home extends StatefulWidget {
   Home({Key key, this.title, this.initCounter: 0}) : super(key: key);
@@ -78,6 +78,24 @@ class HomeState extends State<Home> {
               textColor: Colors.white,
               onPressed: () => Navigator.pushNamed(context, layoutWidgets)
             ),
+            MaterialButton(
+              child: Text('容器组件'),
+              color: Colors.blue,
+              textColor: Colors.white,
+              onPressed: () => Navigator.pushNamed(context, containerWidgets)
+            ),
+            MaterialButton(
+              child: Text('可滚动组件'),
+              color: Colors.blue,
+              textColor: Colors.white,
+              onPressed: () => Navigator.pushNamed(context, scrollableWidgets)
+            ),
+            MaterialButton(
+              child: Text('功能型组件'),
+              color: Colors.blue,
+              textColor: Colors.white,
+              onPressed: () => Navigator.pushNamed(context, functionalWidgets)
+            ),
           ],
         ),
       ),
@@ -86,8 +104,7 @@ class HomeState extends State<Home> {
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation
-          .centerFloat, // This trailing comma makes auto-formatting nicer for build methods.
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat, // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 

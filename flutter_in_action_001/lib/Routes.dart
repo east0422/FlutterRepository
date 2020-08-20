@@ -16,6 +16,19 @@ import 'package:flutter_in_action_001/layoutWidgets/FlexWidget.dart';
 import 'package:flutter_in_action_001/layoutWidgets/RowAndColumnWidget.dart';
 import 'package:flutter_in_action_001/layoutWidgets/StackAndPositionedWidget.dart';
 import 'package:flutter_in_action_001/layoutWidgets/WrapAndFlowWidget.dart';
+// containerWidgets
+import 'package:flutter_in_action_001/ContainerWidgets.dart';
+import 'package:flutter_in_action_001/containerWidgets/ClipWidget.dart';
+import 'package:flutter_in_action_001/containerWidgets/ConstrainedWidget.dart';
+import 'package:flutter_in_action_001/containerWidgets/ContainerWidget.dart';
+import 'package:flutter_in_action_001/containerWidgets/DecoratedWidget.dart';
+import 'package:flutter_in_action_001/containerWidgets/PaddingWidget.dart';
+import 'package:flutter_in_action_001/containerWidgets/ScaffoldWidget.dart';
+import 'package:flutter_in_action_001/containerWidgets/TransformWidget.dart';
+// scrollableWidgets
+import 'package:flutter_in_action_001/ScrollableWidgets.dart';
+// functionalWidgets
+import 'package:flutter_in_action_001/FunctionalWidgets.dart';
 
 // 路由名称，其他地方使用路由名称从这里获取，避免直接使用字符串造成拼写错误
 final String home = '/';
@@ -23,18 +36,31 @@ final String routeOne = '/routeOne';
 final String routeTwo = '/routeTwo';
 // basicWidgets
 final String basicWidgets = '/basicWidgets';
-final String contextRoute = '/basicWidgets/contextRoute';
-final String tapBoxA = '/basicWidgets/tapBoxA';
-final String tapBoxB = '/basicWidgets/tapBoxB';
-final String tapBoxC = '/basicWidgets/tapBoxC';
-final String imageFit = '/basicWidgets/imageFit';
+final String contextRoute = basicWidgets + '/contextRoute';
+final String tapBoxA = basicWidgets + '/tapBoxA';
+final String tapBoxB = basicWidgets + '/tapBoxB';
+final String tapBoxC = basicWidgets + '/tapBoxC';
+final String imageFit = basicWidgets + '/imageFit';
 // layoutWidgets
 final String layoutWidgets = '/layoutWidgets';
-final String rowAndColumnWidget = '/layoutWidgets/rowAndColumnWidgets';
-final String flexWidget = '/layoutWidgets/flexWidget';
-final String wrapAndFlowWidget = '/layoutWidgets/wrapAndFlowWidget';
-final String stackAndPositionedWidget = '/layoutWidgets/stackAndPositionedWidget';
-final String alignWidget = '/layoutWidgets/alignWidget';
+final String rowAndColumnWidget = layoutWidgets + '/rowAndColumnWidgets';
+final String flexWidget = layoutWidgets + '/flexWidget';
+final String wrapAndFlowWidget = layoutWidgets + '/wrapAndFlowWidget';
+final String stackAndPositionedWidget = layoutWidgets + '/stackAndPositionedWidget';
+final String alignWidget = layoutWidgets + '/alignWidget';
+// containerWidgets
+final String containerWidgets = '/containerWidgets';
+final String paddingWidget = containerWidgets + '/paddingWidget';
+final String constrainedWidget = containerWidgets + '/constrainedWidget';
+final String decoratedWidget = containerWidgets + '/decoratedWidget';
+final String transformWidget = containerWidgets + '/transformWidget';
+final String containerWidget = containerWidgets + '/containerWidget';
+final String scaffoldWidget = containerWidgets + '/scaffoldWidget';
+final String clipWidget = containerWidgets + '/clipWidget';
+// scrollableWidgets
+final String scrollableWidgets = '/scrollableWidgets';
+// functionalWidgets
+final String functionalWidgets = '/functionalWidgets';
 
 // 路由表
 final Map<String, WidgetBuilder> routes = {
@@ -55,6 +81,19 @@ final Map<String, WidgetBuilder> routes = {
   wrapAndFlowWidget: (context) => WrapAndFlowWidget(),
   stackAndPositionedWidget: (context) => StackAndPositionedWidget(),
   alignWidget: (context) =>  AlignWidget(),
+  // containerWidgets
+  containerWidgets: (context) => ContainerWidgets(),
+  paddingWidget: (context) => PaddingWidget(),
+  constrainedWidget: (context) => ConstrainedWidget(),
+  decoratedWidget: (context) => DecoratedWidget(),
+  transformWidget: (context) => TransformWidget(),
+  containerWidget: (context) => ContainerWidget(),
+  scaffoldWidget: (context) => ScaffoldWidget(),
+  clipWidget: (context) => ClipWidget(),
+  // scrollableWidgets
+  scrollableWidgets: (context) => ScrollableWidgets(),
+  // functionalWidgets
+  functionalWidgets: (context) => FunctionalWidgets(),
 };
 
 // 调用Navigator.pushNamed(...)打开命名路由时，如果指定的路由名在路由表中已注册，则会调用路由表中的builder函数来生成路由组件；如果路由表中没有注册，才会调用onGenerateRoute来生成路由
