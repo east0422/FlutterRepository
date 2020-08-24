@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_in_action_001/Routes.dart' show singleChildScrollViewWidget, listViewWidget, gridViewWidget, customScrollViewWidget, scrollControllerWidget;
 
 class ScrollableWidgets extends StatelessWidget {
   final List<Map> list = [
-    // {'title': '', 'routeName': ''},
+    {'title': 'SingleChildScrollView', 'routeName': singleChildScrollViewWidget},
+    {'title': 'ListView', 'routeName': listViewWidget},
+    {'title': 'GridView', 'routeName': gridViewWidget},
+    {'title': 'CustomScrollView', 'routeName': customScrollViewWidget},
+    {'title': '滚动监听及控制(ScrollController)', 'routeName': scrollControllerWidget},
   ];
 
   @override

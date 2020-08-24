@@ -27,6 +27,11 @@ import 'package:flutter_in_action_001/containerWidgets/ScaffoldWidget.dart';
 import 'package:flutter_in_action_001/containerWidgets/TransformWidget.dart';
 // scrollableWidgets
 import 'package:flutter_in_action_001/ScrollableWidgets.dart';
+import 'package:flutter_in_action_001/scrollableWidgets/CustomScrollViewWidget.dart';
+import 'package:flutter_in_action_001/scrollableWidgets/GridViewWidget.dart';
+import 'package:flutter_in_action_001/scrollableWidgets/ListViewWidget.dart';
+import 'package:flutter_in_action_001/scrollableWidgets/ScrollControllerWidget.dart';
+import 'package:flutter_in_action_001/scrollableWidgets/SingleChildScrollViewWidget.dart';
 // functionalWidgets
 import 'package:flutter_in_action_001/FunctionalWidgets.dart';
 
@@ -59,6 +64,12 @@ final String scaffoldWidget = containerWidgets + '/scaffoldWidget';
 final String clipWidget = containerWidgets + '/clipWidget';
 // scrollableWidgets
 final String scrollableWidgets = '/scrollableWidgets';
+final String singleChildScrollViewWidget = scrollableWidgets + '/singleChildScrollViewWidget';
+final String listViewWidget = scrollableWidgets + '/listViewWidget';
+final String gridViewWidget = scrollableWidgets + '/gridViewWidget';
+final String customScrollViewWidget = scrollableWidgets + '/customScrollViewWidget';
+final String scrollControllerWidget = scrollableWidgets + '/scrollControllerWidget';
+
 // functionalWidgets
 final String functionalWidgets = '/functionalWidgets';
 
@@ -92,6 +103,11 @@ final Map<String, WidgetBuilder> routes = {
   clipWidget: (context) => ClipWidget(),
   // scrollableWidgets
   scrollableWidgets: (context) => ScrollableWidgets(),
+  singleChildScrollViewWidget: (context) => SingleChildScrollViewWidget(),
+  listViewWidget: (context) => ListViewWidget(),
+  gridViewWidget: (context) => GridViewWidget(),
+  customScrollViewWidget: (context) => CustomScrollViewWidget(),
+  scrollControllerWidget: (context) => ScrollControllerWidget(),
   // functionalWidgets
   functionalWidgets: (context) => FunctionalWidgets(),
 };
