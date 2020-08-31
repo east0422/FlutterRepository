@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_in_action_001/Routes.dart' show willPopScopeWidget, shareDataWidget, crossWidget, themeAndColorWidget, asyncUpdateUIWidget, dialogWidget;
 
 class FunctionalWidgets extends StatelessWidget {
   final List<Map> list = [
-    // {'title': '', 'routeName': ''},
+    {'title': '导航返回拦截', 'routeName': willPopScopeWidget},
+    {'title': '数据共享', 'routeName': shareDataWidget},
+    {'title': '跨组件状态共享', 'routeName': crossWidget},
+    {'title': '颜色和主题', 'routeName': themeAndColorWidget},
+    {'title': '异步UI更新', 'routeName': asyncUpdateUIWidget},
+    {'title': '对话框', 'routeName': dialogWidget},
   ];
 
   @override

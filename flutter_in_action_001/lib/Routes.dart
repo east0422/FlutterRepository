@@ -34,6 +34,12 @@ import 'package:flutter_in_action_001/scrollableWidgets/ScrollControllerWidget.d
 import 'package:flutter_in_action_001/scrollableWidgets/SingleChildScrollViewWidget.dart';
 // functionalWidgets
 import 'package:flutter_in_action_001/FunctionalWidgets.dart';
+import 'package:flutter_in_action_001/functionalWidgets/AsyncUpdateUIWidget.dart';
+import 'package:flutter_in_action_001/functionalWidgets/CrossWidget.dart';
+import 'package:flutter_in_action_001/functionalWidgets/DialogWidget.dart';
+import 'package:flutter_in_action_001/functionalWidgets/ShareDataWidget.dart';
+import 'package:flutter_in_action_001/functionalWidgets/ThemeAndColorWidget.dart';
+import 'package:flutter_in_action_001/functionalWidgets/WillPopScopeWidget.dart';
 
 // 路由名称，其他地方使用路由名称从这里获取，避免直接使用字符串造成拼写错误
 final String home = '/';
@@ -72,6 +78,12 @@ final String scrollControllerWidget = scrollableWidgets + '/scrollControllerWidg
 
 // functionalWidgets
 final String functionalWidgets = '/functionalWidgets';
+final String willPopScopeWidget = functionalWidgets + '/willPopScopeWidget';
+final String shareDataWidget = functionalWidgets + '/shareDataWidget';
+final String crossWidget = functionalWidgets + '/crossWidget';
+final String themeAndColorWidget = functionalWidgets + '/themeAndColorWidget';
+final String asyncUpdateUIWidget = functionalWidgets + '/asyncUpdateUIWidget';
+final String dialogWidget = functionalWidgets + '/dialogWidget';
 
 // 路由表
 final Map<String, WidgetBuilder> routes = {
@@ -110,6 +122,12 @@ final Map<String, WidgetBuilder> routes = {
   scrollControllerWidget: (context) => ScrollControllerWidget(),
   // functionalWidgets
   functionalWidgets: (context) => FunctionalWidgets(),
+  willPopScopeWidget: (context) => WillPopScopeWidget(),
+  shareDataWidget: (context) => ShareDataWidget(),
+  crossWidget: (context) => CrossWidget(),
+  themeAndColorWidget: (context) => ThemeAndColorWidget(),
+  asyncUpdateUIWidget: (context) => AsyncUpdateUIWidget(),
+  dialogWidget: (context) => DialogWidget(),
 };
 
 // 调用Navigator.pushNamed(...)打开命名路由时，如果指定的路由名在路由表中已注册，则会调用路由表中的builder函数来生成路由组件；如果路由表中没有注册，才会调用onGenerateRoute来生成路由
